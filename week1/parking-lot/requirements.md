@@ -160,3 +160,14 @@ Paste the finished file. Before checkpoint 2, I'll give you a 60-second drill on
 - A vehicle is identified by a licence plate and cannot be parked twice at once.
 - Time is supplied to the system, not read from a global clock, so fees are testable.
 
+
+
+
+
+
+
+
+
+
+
+
