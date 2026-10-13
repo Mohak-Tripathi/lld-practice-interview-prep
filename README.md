@@ -1,60 +1,61 @@
-# LLD Gym — one month, Python, machine-coding rounds
+# LLD practice
 
-Target: Razorpay / Meesho / Swiggy / CRED machine-coding and LLD rounds.
-Format being trained for: build a **working program with a driver, inside 90 minutes**,
-absorbing new requirements thrown mid-round. Not a class diagram. Not a discussion.
+Python. One file per problem. Working code every time.
 
-## Rules of the gym
+The plan, the method and the review rubric live in the Claude project
+(`lld_method.md`, `lld_design_rubric.md`, `lld_calendar.md`) — not in this repo.
+This repo is code and a scoreboard.
 
-- Python only. No framework, no DB, dicts for storage.
-- It must run at the timer. Unfinished but running beats complete but broken.
-- Never watch a video or open a reference solution for a problem before attempting it.
-- Every problem ends with `learnings.md` written by Mohak, refined with Claude.
+## Per problem
 
-## Levels
+```bash
+mkdir weekN/<problem> && cd weekN/<problem>
+touch <problem>.py          # exceptions, classes, driver under __main__
+python <problem>.py         # run it after EVERY class
+```
 
-### Week 1 — skeleton and simple entities (full hand-holding)
-1. Parking Lot  *(session 1 also builds the reusable skeleton)*
-2. Tic-Tac-Toe
-3. Vending Machine
-4. Elevator System
+## Scoreboard
 
-### Week 2 — multi-entity, state machines, locking (less hand-holding)
-5. Splitwise
-6. Snake and Ladder
-7. Movie Ticket Booking  *(concurrency: seat locking)*
+Stars: **R**uns · **S**eams clean (no rule leaked into the orchestrator) · **C**urveball
+absorbed with no edit to a working class. Two stars minimum to move on.
 
-### Week 3 — timed machine-coding simulation, 90 min strict (hints only)
-8. In-memory SQL database  *(reported at Razorpay)*
-9. Ride-sharing, two features  *(reported at Meesho)*
-10. Rating system  *(reported at Razorpay)*
+| # | Problem | Skeleton | R1 | R2 | R3 | Stars | Verdict |
+|---|---|---|---|----|----|---|---|
+| 1 | Parking Lot | allocation | ✅ 11 Oct | | | R | WEAK HIRE |
+| 2 | LRU Cache | data-structure | | | | | |
+| 3 | Tic-Tac-Toe | game | | | | | |
+| 4 | Vending Machine | state | | | | | |
+| 5 | Splitwise | ledger | | | | | |
+| 6 | Elevator | state | | | | | |
+| 7 | Rate Limiter | data-structure | | | | | |
+| 8 | Movie Booking | allocation | | | | | |
+| 9 | Logging Framework | pipeline | | | | | |
+| 10 | Notification Service | pipeline | | | | | |
+| 11 | ATM | state | | | | | |
+| 12 | Ride-hailing | allocation | | | | | |
+| 13 | Hit Counter | data-structure | | | | | |
+| 14 | HashMap | data-structure | | | | | |
+| 15 | Snake & Ladder | game | | | | | |
+| 16 | Digital Wallet | ledger | | | | | |
+| 17 | Trie / Autocomplete | data-structure | | | | | |
+| 18 | Inventory + stock block | allocation | | | | | |
+| 19 | URL Shortener | data-structure | | | | | |
+| 20 | Task Scheduler | pipeline | | | | | |
+| 21 | Text Editor | data-structure | | | | | |
+| 22 | File System | data-structure | | | | | |
 
-### Week 4 — company-shaped, interview conditions (near-silent)
-11. Inventory with stock blocking  *(Meesho's most reported)*
-12. Payment processing package  *(CRED-shaped)*
-13. Top-K restaurant discovery  *(Swiggy-shaped)*
-14. Git-like version control  *(reported at Razorpay SDE2)*
+Problems 1-12 get three reps. 13-22 get two.
 
-Weeks 3 and 4 are aspirational on volume. Finishing 10 levels properly beats 14 half-done.
+## Recurring mistakes
 
-## Scoring
+Anything appearing three times becomes a drill.
 
-Three stars per level:
-- it runs and the driver demonstrates every flow
-- no business rule leaked into the orchestrator, no infra leaked into entities
-- the curveball needed no edit to existing working classes
+| Mistake | Seen in |
+|---|---|
+| | |
 
-Two stars minimum to advance. One star means repeat the level later in the week.
+## Commit format
 
-## Weekly rhythm
-
-- Weekdays: ~1 hour LLD (checkpoints 1-3 of the next problem, or finishing the previous), ~45 min DSA.
-- One weekend day: the full 90-minute uninterrupted build, plus review.
-- Daily, separately: applications and referral outreach. This does not pause.
-
-## Folders
-
-- `weekN/<problem>/` — one folder per level: `requirements.md`, `src/`, `main.py`, `learnings.md`
-- `reference/skeleton.py` — the reusable machine-coding skeleton. **Mohak writes this**, in session 1.
-- `docs/` — rubric, rejection list, pattern triggers
-- `progress.md` — the scoreboard
+```
+L2 lru cache R1: WEAK HIRE, 2 stars — eviction logic leaked into the cache class
+```
